@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cheggie Car Rental Service</title>
+    <title>Reservation - Cheggie Car Rental Service</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reservation.css">
 </head>
 <body>
     <header>
@@ -17,17 +18,116 @@
                         <img src="images/Car.png" alt="Cheggie Car Rent" class="logo-image">
                     </a>
                 </div>
-                <a href="reservation.html" class="reservation-btn">
-                    <i class="fas fa-calendar-alt me-1"></i>Reservation
+                <a href="index.html" class="reservation-btn">
+                    <i class="fas fa-arrow-left me-1"></i>Back to Cars
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container">
-        <h1>Reservation</h1>
+        <div class="reservation-container">
+            <h1>Car Reservation</h1>
+            
+            <!-- Selected Car Section -->
+            <div class="selected-car" id="selectedCarSection">
+                <h3>Selected Vehicle</h3>
+                <div class="car-info">
+                    <img id="carImage" src="" alt="Selected Car" class="car-image">
+                    <div class="car-details-summary">
+                        <h3 id="carName"></h3>
+                        <p><strong>Year:</strong> <span id="carYear"></span></p>
+                        <p><strong>Type:</strong> <span id="carType"></span></p>
+                        <p><strong>Fuel:</strong> <span id="carFuel"></span></p>
+                        <p><strong>Mileage:</strong> <span id="carMileage"></span></p>
+                        <p class="price"><strong>Price:</strong> $<span id="carPrice"></span>/day</p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Reservation Form -->
+            <form id="reservationForm">
+                <!-- Customer Information -->
+                <div class="form-section">
+                    <h4><i class="fas fa-user"></i> Customer Information</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="customerName">Full Name *</label>
+                                <input type="text" id="customerName" name="customerName" class="form-control" required>
+                                <div class="error-message" id="nameError">Please enter your full name</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="customerEmail">Email *</label>
+                                <input type="email" id="customerEmail" name="customerEmail" class="form-control" required>
+                                <div class="error-message" id="emailError">Please enter a valid email address</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="customerPhone">Phone Number *</label>
+                                <input type="tel" id="customerPhone" name="customerPhone" class="form-control" required>
+                                <div class="error-message" id="phoneError">Please enter your phone number</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="driversLicense">Driver's License Number *</label>
+                                <input type="text" id="driversLicense" name="driversLicense" class="form-control" required>
+                                <div class="error-message" id="licenseError">Please enter your driver's license number</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rental Information -->
+                <div class="form-section">
+                    <h4><i class="fas fa-calendar-alt"></i> Rental Information</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="startDate">Start Date *</label>
+                                <input type="date" id="startDate" name="startDate" class="form-control" required>
+                                <div class="error-message" id="startDateError">Please select a start date</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="rentalDays">Rental Period (days) *</label>
+                                <input type="number" id="rentalDays" name="rentalDays" class="form-control" min="1" max="30" value="1" required>
+                                <div class="error-message" id="daysError">Please enter rental period (1-30 days)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rental Summary -->
+                <div class="rental-summary">
+                    <h4><i class="fas fa-receipt"></i> Rental Summary</h4>
+                    <div class="summary-row">
+                        <span>Daily Rate:</span>
+                        <span>$<span id="dailyRate">0</span></span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Number of Days:</span>
+                        <span id="numberOfDays">1</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Total Amount:</span>
+                        <span>$<span id="totalAmount">0</span></span>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-check-circle me-2"></i>Complete Reservation
+                </button>
+            </form>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -50,11 +150,34 @@
         </div>
     </footer>
 
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reservation Confirmed!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fas fa-check-circle text-success" style="font-size: 48px; margin-bottom: 20px;"></i>
+                        <h4>Thank you for your reservation!</h4>
+                        <p>Your reservation has been confirmed. You will receive a confirmation email shortly.</p>
+                        <p><strong>Reservation ID:</strong> <span id="reservationId"></span></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='index.html'">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="app.js"></script>
+    <script src="reservation.js"></script>
 </body>
 </html>
