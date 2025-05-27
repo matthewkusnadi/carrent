@@ -60,13 +60,11 @@ function setupSearch(cars) {
             
             displayCars(filteredCars);
         } else {
-            // Show all cars if search is empty
             displayCars(cars);
         }
     });
 }
 
-// Set up filter functionality
 function setupFilters(cars) {
     $('#carTypeFilter, #brandFilter').change(function() {
         const carType = $('#carTypeFilter').val();
@@ -97,8 +95,4 @@ $(document).ready(function() {
         setupSearch(data.cars);
         setupFilters(data.cars);
     })
-    .fail(function(jqxhr, textStatus, error) {
-        console.error("Error loading cars.json: " + error);
-        $('#carsGrid').html('<p>Error loading cars. Please try again later.</p>');
-    });
 });
