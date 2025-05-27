@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheggie Car Rental Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="images/Car.png" alt="Cheggie Car Rent" class="logo-image">
+                    </a>
+                </div>
+                <a href="reservation.html" class="reservation-btn">
+                    <i class="fas fa-calendar-alt me-1"></i>Reservation
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Search and Filter Section -->
+        <section class="search-section">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by car type, brand, model...">
+                <div id="searchSuggestions" class="search-suggestions"></div>
+            </div>
+            <div class="filter-container">
+                <select id="carTypeFilter">
+                    <option value="">All Car Types</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Coupe">Coupe</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Minivan">Minivan</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
+                <select id="brandFilter">
+                    <option value="">All Brands</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Hyundai">Hyundai</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Car Grid Section -->
+        <section class="cars-section">
+            <h2>Available Cars</h2>
+            <div id="carsGrid" class="car-grid">
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Car.png" alt="Cheggie Car Rent" class="logo-image-small">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Sydney, NSW</p>
+                    <p><i class="fas fa-phone"></i> (02) 1234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@cheggiecarrent.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Cheggie Car Rent. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>

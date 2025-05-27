@@ -1,0 +1,296 @@
+/* Basic reset and general styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header styles */
+header {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo-container {
+    width: 250px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.reservation-btn {
+    background-color: #0066cc;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.reservation-btn:hover {
+    background-color: #0052a3;
+    color: white;
+}
+
+/* Search and filter section */
+.search-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.search-bar {
+    width: 68%;
+    position: relative;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.search-suggestions {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.filter-container {
+    width: 30%;
+    display: flex;
+    gap: 10px;
+}
+
+.filter-container select {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+}
+
+/* Cars section */
+.cars-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.cars-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Car card styles */
+.car-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.car-details {
+    padding: 15px;
+}
+
+.car-details h3 {
+    margin-bottom: 10px;
+    color: #222;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.car-badges {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.car-type {
+    background-color: #6c757d;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.status {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.status.available {
+    color: #28a745;
+}
+
+.status.unavailable {
+    color: #dc3545;
+}
+
+.car-details p {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+}
+
+.car-price-rent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0066cc;
+}
+
+.rent-btn {
+    background-color: #0066cc;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.rent-btn:hover {
+    background-color: #0052a3;
+    color: white;
+}
+
+button.rent-btn[disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.car-card.unavailable {
+    opacity: 0.7;
+}
+
+/* Footer styles */
+footer {
+    background-color: #f8f9fa;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+    color: #666;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    width: 60%;
+}
+
+.logo-image-small {
+    max-width: 180px;
+    margin-bottom: 15px;
+}
+
+.footer-contact {
+    width: 35%;
+}
+
+.footer-contact h4 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.footer-contact p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: #0066cc;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}

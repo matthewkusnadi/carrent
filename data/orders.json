@@ -1,0 +1,55 @@
+{
+    "orders": [
+      {
+        "customer": {
+          "name": "John Doe",
+          "phoneNumber": "+1234567890",
+          "email": "johndoe@example.com",
+          "driversLicenseNumber": "D123456789"
+        },
+        "car": {
+          "vin": "1HGBH41JXMN109186"
+        },
+        "rental": {
+          "startDate": "2025-04-01",
+          "rentalPeriod": 7,
+          "totalPrice": 350,
+          "orderDate": "2025-03-28"
+        }
+      },
+      {
+        "customer": {
+          "name": "Jane Smith",
+          "phoneNumber": "+0987654321",
+          "email": "janesmith@example.com",
+          "driversLicenseNumber": "D987654321"
+        },
+        "car": {
+          "vin": "2HGFC2F60KH123456"
+        },
+        "rental": {
+          "startDate": "2025-04-05",
+          "rentalPeriod": 5,
+          "totalPrice": 250,
+          "orderDate": "2025-03-29"
+        }
+      },
+      {
+        "customer": {
+          "name": "Alice Johnson",
+          "phoneNumber": "+1122334455",
+          "email": "alicejohnson@example.com",
+          "driversLicenseNumber": "D112233445"
+        },
+        "car": {
+          "vin": "1FA6P8TH6J5134567"
+        },
+        "rental": {
+          "startDate": "2025-04-10",
+          "rentalPeriod": 10,
+          "totalPrice": 500,
+          "orderDate": "2025-03-30"
+        }
+      }
+    ]
+  }
